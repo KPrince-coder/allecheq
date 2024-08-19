@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "dev.android.allecheq"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "dev.android.allecheq"
