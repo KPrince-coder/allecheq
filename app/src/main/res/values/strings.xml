@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">AlleCheq</string>
     <string name="get_started">Get Started</string>
+    <string name="tree_nut">Tree Nuts</string>
+    <string name="shellfish">Shellfish</string>
+    <string name="peanuts">Peanuts</string>
+    <string name="milk">Milk</string>
+    <string name="eggs">Eggs</string>
+    <string name="soy">Soybeans</string>
+    <string name="fish">Fish</string>
+    <string name="wheat">Wheat</string>
 </resources>
