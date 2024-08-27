@@ -9,4 +9,12 @@
     <string name="soy">Soybeans</string>
     <string name="fish">Fish</string>
     <string name="wheat">Wheat</string>
+    <string name="wheat_image">Wheat image</string>
+    <string name="peanut_image">Peanuts image</string>
+    <string name="shellfish_image">Shellfish image</string>
+    <string name="milk_image">Milk image</string>
+    <string name="soy_image">Soybeans image</string>
+    <string name="tree_nut_image">Tree Nuts image</string>
+    <string name="egg_image">Egg image</string>
+    <string name="fish_image">Fish image</string>
 </resources>
