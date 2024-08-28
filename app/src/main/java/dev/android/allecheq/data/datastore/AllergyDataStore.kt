@@ -33,7 +33,7 @@ class AllergyDataStore(context: Context) {
     suspend fun getSelectedAllergies(): List<Allergy> {
         /**
          * Retrieves allergies from the dataStore
-         * @return
+         * @return List of allergies
          */
         val preferences = pref.data.firstOrNull() ?: emptyPreferences()
         try {
