@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -78,8 +79,9 @@ private fun HomeScreenContent(
                 // content
                 Column(
                     modifier = Modifier
-                        .height(dimensionResource(id = R.dimen.background_height)),
-                    verticalArrangement = Arrangement.SpaceAround
+                        .height(dimensionResource(id = R.dimen.background_height))
+                        .padding(vertical = VALUE_16.dp),
+                    verticalArrangement = Arrangement.SpaceBetween
                 ) {
                     AppNameAndMotto()
                     Column(
@@ -87,12 +89,16 @@ private fun HomeScreenContent(
                     ) {
                         FilledButton(
                             label = stringResource(id = R.string.scan_food),
-                            onClick = onScanFoodClick
+                            onClick = onScanFoodClick,
+                            modifier = Modifier
+                                .fillMaxWidth()
                         )
                         Spacer(modifier = Modifier.height(VALUE_16.dp))
                         OutlinedButton(
                             label = stringResource(id = R.string.emergency),
-                            onClick = onEmergencyClick
+                            onClick = onEmergencyClick,
+                            modifier = Modifier
+                                .fillMaxWidth()
                         )
                     }
                 }
