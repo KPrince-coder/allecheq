@@ -95,7 +95,7 @@ private fun OnboardingScreen2Content(
                     .wrapContentSize(Alignment.BottomCenter)
             ) {
                 FilledButton(
-                    text = stringResource(R.string.continue_button),
+                    label = stringResource(R.string.continue_button),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = VALUE_16.dp)
