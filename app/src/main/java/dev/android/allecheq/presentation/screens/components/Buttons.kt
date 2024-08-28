@@ -1,6 +1,5 @@
 package dev.android.allecheq.presentation.screens.components
 
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -23,9 +22,9 @@ import dev.android.allecheq.presentation.utils.VALUE_8
 import dev.android.allecheq.ui.theme.FontFam
 
 @Composable
-fun FilledButton(label: String, modifier: Modifier = Modifier.fillMaxWidth()) {
+fun FilledButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = onClick,
         modifier = modifier,
         elevation = ButtonDefaults.buttonElevation(
             defaultElevation = 2.dp,
@@ -55,9 +54,9 @@ fun FilledButton(label: String, modifier: Modifier = Modifier.fillMaxWidth()) {
 }
 
 @Composable
-fun OutlinedButton(label: String, modifier: Modifier = Modifier.fillMaxWidth()) {
+fun OutlinedButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
     OutlinedButton(
-        onClick = { /*TODO*/ },
+        onClick = onClick,
         modifier = modifier,
         elevation = ButtonDefaults.buttonElevation(
             defaultElevation = 2.dp,

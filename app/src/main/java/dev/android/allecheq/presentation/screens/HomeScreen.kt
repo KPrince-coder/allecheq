@@ -31,15 +31,24 @@ import dev.android.allecheq.presentation.utils.VALUE_20
 import dev.android.allecheq.ui.theme.AlleCheqTheme
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+fun HomeScreen(
+    onScanFoodClick: () -> Unit,
+    onEmergencyClick: () -> Unit,
+) {
     HomeScreenContent(
-        modifier = modifier
+        onEmergencyClick = onEmergencyClick,
+        onScanFoodClick = onScanFoodClick
     )
 }
 
 @Composable
-private fun HomeScreenContent(modifier: Modifier = Modifier) {
+private fun HomeScreenContent(
+    onScanFoodClick: () -> Unit,
+    onEmergencyClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     Box(modifier = modifier) {
+        // background image
         BackgroundImage(
             modifier = Modifier
                 .fillMaxSize()
@@ -76,9 +85,15 @@ private fun HomeScreenContent(modifier: Modifier = Modifier) {
                     Column(
                         modifier = Modifier
                     ) {
-                        FilledButton(label = stringResource(id = R.string.scan_food))
+                        FilledButton(
+                            label = stringResource(id = R.string.scan_food),
+                            onClick = onScanFoodClick
+                        )
                         Spacer(modifier = Modifier.height(VALUE_16.dp))
-                        OutlinedButton(label = stringResource(id = R.string.emergency))
+                        OutlinedButton(
+                            label = stringResource(id = R.string.emergency),
+                            onClick = onEmergencyClick
+                        )
                     }
                 }
             }
@@ -102,6 +117,9 @@ private fun HomeScreenContent(modifier: Modifier = Modifier) {
 @Composable
 private fun HomeScreenPreview() {
     AlleCheqTheme {
-        HomeScreen()
+        HomeScreen(
+            onEmergencyClick = {},
+            onScanFoodClick = {}
+        )
     }
 }

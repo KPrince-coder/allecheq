@@ -30,15 +30,16 @@ import dev.android.allecheq.presentation.utils.VALUE_24
 import dev.android.allecheq.ui.theme.AlleCheqTheme
 
 @Composable
-fun OnboardingScreen1() {
+fun OnboardingScreen1(onClick: () -> Unit) {
     OnboardingScreen1Content(
+        onClick = onClick,
         modifier = Modifier
             .fillMaxSize()
     )
 }
 
 @Composable
-private fun OnboardingScreen1Content(modifier: Modifier = Modifier) {
+private fun OnboardingScreen1Content(onClick: () -> Unit, modifier: Modifier = Modifier) {
     Box(modifier = modifier) {
         // background image
         BackgroundImage()
@@ -65,6 +66,7 @@ private fun OnboardingScreen1Content(modifier: Modifier = Modifier) {
                 AppNameAndMotto()
                 FilledButton(
                     label = stringResource(id = R.string.get_started),
+                    onClick = onClick,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = VALUE_16.dp)
@@ -90,6 +92,6 @@ private fun OnboardingScreen1Content(modifier: Modifier = Modifier) {
 @Composable
 private fun SplashScreenPreview() {
     AlleCheqTheme {
-        OnboardingScreen1()
+        OnboardingScreen1 {}
     }
 }

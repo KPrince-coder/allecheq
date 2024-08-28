@@ -49,7 +49,7 @@ import dev.android.allecheq.ui.theme.AlleCheqTheme
 import dev.android.allecheq.ui.theme.FontFam
 
 @Composable
-fun OnboardingScreen2(modifier: Modifier = Modifier) {
+fun OnboardingScreen2(onClick: () -> Unit, onBackwardNavigation: () -> Unit) {
     // allergyViewModel: AllergyViewModel = viewModel()
     val allergies = AllergyData.allergies
 
@@ -58,14 +58,23 @@ fun OnboardingScreen2(modifier: Modifier = Modifier) {
         // onCheckedChange = { isChecked, allergyId ->
         //     allergyViewModel.toggleAllergySelection(allergyId = allergyId, isChecked = isChecked)
         // }
-        onCheckedChange = { _, _ -> },
-        modifier = modifier
+        onCheckedChange = { isChecked, allergyId ->
+            allergies
+                .filter { it.id == allergyId }
+                .map { allergy ->
+                    allergy.copy(isSelected = isChecked)
+                }
+        },
+        onClick = onClick,
+        onBackwardNavigation = onBackwardNavigation
     )
 }
 
 @Composable
 private fun OnboardingScreen2Content(
     allergies: List<Allergy>,
+    onClick: () -> Unit,
+    onBackwardNavigation: () -> Unit,
     onCheckedChange: (Boolean, Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -79,7 +88,7 @@ private fun OnboardingScreen2Content(
                 .padding(VALUE_16.dp),
         ) {
             // top text and backwards navigation arrow
-            TopTextAndNavIcon()
+            TopTextAndNavIcon(onBackwardNavigation)
             // allergies and their checkboxes
             AllergyItems(
                 allergies = allergies,
@@ -96,6 +105,7 @@ private fun OnboardingScreen2Content(
             ) {
                 FilledButton(
                     label = stringResource(R.string.continue_button),
+                    onClick = onClick,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = VALUE_16.dp)
@@ -106,7 +116,7 @@ private fun OnboardingScreen2Content(
 }
 
 @Composable
-private fun TopTextAndNavIcon(modifier: Modifier = Modifier) {
+private fun TopTextAndNavIcon(onBackwardNavigation: () -> Unit, modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .fillMaxWidth(),
@@ -119,7 +129,7 @@ private fun TopTextAndNavIcon(modifier: Modifier = Modifier) {
             horizontalAlignment = Alignment.Start
         ) {
             IconButton(
-                onClick = { /*TODO*/ },
+                onClick = onBackwardNavigation,
                 modifier = Modifier,
             ) {
                 Icon(
@@ -240,7 +250,9 @@ private fun ScreenPrev() {
         OnboardingScreen2Content(
             onCheckedChange = { _, _ ->
             },
-            allergies = AllergyData.allergies
+            allergies = AllergyData.allergies,
+            onClick = {},
+            onBackwardNavigation = {}
         )
     }
 }
