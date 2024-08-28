@@ -35,8 +35,10 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import dev.android.allecheq.R
 import dev.android.allecheq.data.Allergy
 import dev.android.allecheq.data.AllergyData
+import dev.android.allecheq.presentation.screens.components.FilledButton
 import dev.android.allecheq.presentation.utils.VALUE_12
 import dev.android.allecheq.presentation.utils.VALUE_16
 import dev.android.allecheq.presentation.utils.VALUE_20
@@ -50,7 +52,6 @@ import dev.android.allecheq.ui.theme.FontFam
 fun OnboardingScreen2(modifier: Modifier = Modifier) {
     // allergyViewModel: AllergyViewModel = viewModel()
     val allergies = AllergyData.allergies
-    Text("I'm hungry")
 
     OnboardingScreen2Content(
         allergies = allergies,
@@ -75,7 +76,7 @@ private fun OnboardingScreen2Content(
     ) {
         Column(
             modifier = Modifier
-                .padding(horizontal = VALUE_16.dp, vertical = VALUE_20.dp),
+                .padding(VALUE_16.dp),
         ) {
             // top text and backwards navigation arrow
             TopTextAndNavIcon()
@@ -86,6 +87,20 @@ private fun OnboardingScreen2Content(
                 modifier = Modifier
                     .padding(horizontal = VALUE_8.dp, vertical = VALUE_12.dp)
             )
+            // continue button
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = VALUE_12.dp)
+                    .wrapContentSize(Alignment.BottomCenter)
+            ) {
+                FilledButton(
+                    text = stringResource(R.string.continue_button),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = VALUE_16.dp)
+                )
+            }
         }
     }
 }
@@ -157,7 +172,7 @@ private fun AllergyItem(
 ) {
     Row(
         modifier = modifier
-            .padding(vertical = VALUE_16.dp),
+            .padding(vertical = (VALUE_12 - 2).dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
