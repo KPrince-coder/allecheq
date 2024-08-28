@@ -14,6 +14,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,7 +46,7 @@ private fun OnboardingScreen1Content(modifier: Modifier = Modifier) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(420.dp)
+                .height(dimensionResource(id = R.dimen.background_height))
                 .background(
                     color = MaterialTheme.colorScheme.background,
                     shape = RoundedCornerShape(topStartPercent = 30)

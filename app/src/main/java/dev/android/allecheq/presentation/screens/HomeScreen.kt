@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -44,6 +45,7 @@ private fun HomeScreenContent(modifier: Modifier = Modifier) {
                 .fillMaxSize()
                 .zIndex(1F)
         )
+        // gradient background
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -58,14 +60,16 @@ private fun HomeScreenContent(modifier: Modifier = Modifier) {
                 )
                 .zIndex(2F)
         ) {
+            // content container
             Box(
                 modifier = Modifier
                     .padding(VALUE_20.dp)
                     .align(Alignment.BottomCenter)
             ) {
+                // content
                 Column(
                     modifier = Modifier
-                        .height(420.dp),
+                        .height(dimensionResource(id = R.dimen.background_height)),
                     verticalArrangement = Arrangement.SpaceAround
                 ) {
                     AppNameAndMotto()
