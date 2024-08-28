@@ -88,7 +88,12 @@ private fun OnboardingScreen2Content(
                 .padding(VALUE_16.dp),
         ) {
             // top text and backwards navigation arrow
-            TopTextAndNavIcon(onBackwardNavigation)
+            TopTextAndNavIcon(
+                onBackwardNavigation,
+                modifier = Modifier.padding(
+                    top = VALUE_32.dp
+                )
+            )
             // allergies and their checkboxes
             AllergyItems(
                 allergies = allergies,
