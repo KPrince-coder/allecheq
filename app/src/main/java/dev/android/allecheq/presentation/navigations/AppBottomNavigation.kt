@@ -24,6 +24,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import dev.android.allecheq.presentation.utils.VALUE_16
 import dev.android.allecheq.presentation.utils.VALUE_20
+import dev.android.allecheq.presentation.utils.VALUE_24
 import dev.android.allecheq.ui.theme.FontFam
 
 @Composable
@@ -47,11 +48,8 @@ fun AppBottomNavigation(
     }
 
 
-
-
     NavigationBar {
         bottomScreens.forEach { screen ->
-
             val isSelected = currentDestination == screen.route.screen.route
             NavigationBarItem(
                 screen = screen,
@@ -86,15 +84,14 @@ private fun RowScope.NavigationBarItem(
                 painter = painterResource(id = screen.icon),
                 contentDescription = screen.name,
                 modifier = Modifier
-                    .size(VALUE_20.dp),
-                tint = MaterialTheme.colorScheme.tertiary
+                    .size(if (isSelected) VALUE_24.dp else VALUE_20.dp),
             )
         },
         label = {
             Text(
                 text = screen.name,
                 style = TextStyle(
-                    fontWeight = if (isSelected) FontWeight.W600 else FontWeight.W500,
+                    fontWeight = if (isSelected) FontWeight.W600 else FontWeight.Normal,
                     fontSize = VALUE_16.sp,
                     fontFamily = FontFam.Inter.fontFamily
                 )
