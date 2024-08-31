@@ -1,3 +1,7 @@
+# AllECHEQ: A FOOD ALLERGEN DETECTION MOBILE APPLICATION
+*by Atuah Theophilus Opoku & Kyeremeh Prince Kwabena*
+
+
 ## Introduction
 This project is focused on developing an AI-powered mobile application, AlleCheq, designed to detect food allergens in products, specifically targeting children under 12 and middle to high school students. The application leverages machine learning, with a multi-label classification approach to identify potential allergens in food labels. By training a Convolutional Neural Network (CNN) on a curated dataset, the model is capable of recognizing and classifying allergens from images of food packaging.
 The AlleCheq app aims to address the limitations of traditional allergen detection methods by providing a user-friendly, accurate, and accessible solution. This is particularly important for individuals with food allergies who need to make informed decisions about what they consume. The app includes features such as real-time allergen detection, emergency alerts, and educational content on food allergens, making it a comprehensive tool for enhancing food safety and awareness.
