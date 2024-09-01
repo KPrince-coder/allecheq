@@ -21,4 +21,9 @@
     <string name="continue_button">Continue</string>
     <string name="scan_food">Scan Food</string>
     <string name="emergency">Emergency</string>
+    <string name="camera_permission_dialog_text">This app needs camera access to function properly. Please enable it in the app settings.</string>
+    <string name="camera_permission_dialog_title">Camera Permission Required</string>
+    <string name="open_settings_button_text">Open Settings</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="camera_icon_desc">Camera Icon</string>
 </resources>

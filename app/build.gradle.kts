@@ -71,6 +71,13 @@ dependencies {
     implementation(libs.datastore)
     implementation(libs.kotlinx.datetime)
 
+    // cameraX
+    implementation(libs.camera2)
+    implementation(libs.camera.lifecycle)
+    implementation(libs.camera.view)
+    implementation(libs.camera.extensions)
+    implementation(libs.androidx.camera.core)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
