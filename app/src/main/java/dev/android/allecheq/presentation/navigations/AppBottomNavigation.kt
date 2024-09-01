@@ -30,7 +30,6 @@ import dev.android.allecheq.ui.theme.FontFam
 @Composable
 fun AppBottomNavigation(
     navController: NavHostController,
-    modifier: Modifier = Modifier
 ) {
     val bottomScreens = remember {
         listOf(
@@ -40,7 +39,6 @@ fun AppBottomNavigation(
         )
     }
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    // val currentDestination = navBackStackEntry?.destination
     val currentDestination by remember(navBackStackEntry) {
         derivedStateOf {
             navBackStackEntry?.destination?.route
