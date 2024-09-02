@@ -21,23 +21,27 @@ sealed class Destinations(val screen:Screen) {
 sealed class BottomNavigationRoutes<Destinations>(
     val name: String,
     @DrawableRes val icon: Int,
+    @DrawableRes val selectedIcon: Int,
     val route: Destinations
 ) {
     data object Scan : BottomNavigationRoutes<Destinations.ScanScreen>(
         name = "Scan",
         icon = R.drawable.scan_icon,
+        selectedIcon = R.drawable.scan_selected_icon,
         route = Destinations.ScanScreen
     )
 
     data object Emergency : BottomNavigationRoutes<Destinations.EmergencyScreen>(
         name = "Emergency",
         icon = R.drawable.info_icon,
+        selectedIcon = R.drawable.info_selected_icon,
         route = Destinations.EmergencyScreen
     )
 
     data object Profile : BottomNavigationRoutes<Destinations.ProfileScreen>(
         name = "Profile",
         icon = R.drawable.profile_icon,
+        selectedIcon = R.drawable.profile_selected_icon,
         route = Destinations.ProfileScreen
     )
 }
