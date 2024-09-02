@@ -26,4 +26,16 @@
     <string name="open_settings_button_text">Open Settings</string>
     <string name="cancel_button_text">Cancel</string>
     <string name="camera_icon_desc">Camera Icon</string>
+    <string name="contacts">Contacts</string>
+    <string name="add_contact_button_desc">Add contact</string>
+    <string name="no_contacts_available">No contacts available</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_contact">Delete Contact</string>
+    <string name="delete_contact_text">Are you sure you want to delete this contact?</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="relationship">Relationship</string>
+    <string name="name">Name</string>
 </resources>
