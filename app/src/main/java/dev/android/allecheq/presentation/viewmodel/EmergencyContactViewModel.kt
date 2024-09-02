@@ -48,11 +48,7 @@ class EmergencyContactViewModel(private val repository: EmergencyContactReposito
     val contactList: StateFlow<List<EmergencyContact>> = repository.contactListFlow
         .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
-//    fun saveContact(contact: EmergencyContact) {
-//        viewModelScope.launch {
-//            repository.saveContact(contact)
-//        }
-//    }
+
     fun saveContact(name: String, relationship: String, phoneNumber: String) {
         val newContact = EmergencyContact(name, relationship, phoneNumber)
         viewModelScope.launch {

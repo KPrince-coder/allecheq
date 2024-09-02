@@ -84,9 +84,7 @@ fun EmergencyScreen(
     )
 
     val contactList by emergencyContactViewModel.contactList.collectAsStateWithLifecycle()
-    val l = listOf(
-        EmergencyContact("prince", "father", "1234")
-    )
+
 
     EmergencyScreenContent(
         modifier = modifier.padding(paddingValues),
