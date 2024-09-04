@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "dev.android.allecheq"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -42,6 +42,7 @@ android {
     }
     buildFeatures {
         compose = true
+        mlModelBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -49,6 +50,13 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+    sourceSets {
+        getByName("main") {
+            assets {
+                srcDirs("src/main/assets")
+            }
         }
     }
 }
@@ -77,6 +85,12 @@ dependencies {
     implementation(libs.camera.view)
     implementation(libs.camera.extensions)
     implementation(libs.androidx.camera.core)
+
+    // tensorflow
+    implementation(libs.tensorflow)
+    implementation(libs.tensor.flow.lite.support)
+    implementation(libs.tensorflow.lite.metadata)
+    implementation(libs.tensorflow.lite.gpu)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

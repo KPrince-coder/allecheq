@@ -15,6 +15,12 @@ splashVer = "1.0.1"
 dataStoreVer = "1.1.1"
 kotxDatetimeVer = "0.6.1"
 cameraX = "1.3.4"
+tensorFlowVer = "2.15.0"
+tensorFlowLiteSupportVer = "0.4.3"
+tensorflowLiteMetadata = "0.1.0"
+tensorflowLiteGpu = "2.3.0"
+
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +50,12 @@ camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = 
 camera-view = { module = "androidx.camera:camera-view", version.ref = "cameraX" }
 camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "cameraX" }
 androidx-camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraX" }
+
+# tensorFlow
+tensorflow = { module = "org.tensorflow:tensorflow-lite", version.ref = "tensorFlowVer" }
+tensor-flow-lite-support = { module = "org.tensorflow:tensorflow-lite-support", version.ref = "tensorFlowLiteSupportVer" }
+tensorflow-lite-metadata = { group = "org.tensorflow", name = "tensorflow-lite-metadata", version.ref = "tensorflowLiteMetadata" }
+tensorflow-lite-gpu = { group = "org.tensorflow", name = "tensorflow-lite-gpu", version.ref = "tensorflowLiteGpu" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

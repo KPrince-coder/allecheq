@@ -79,7 +79,7 @@ private fun RowScope.NavigationBarItem(
         },
         icon = {
             Icon(
-                painter = painterResource(id = screen.icon),
+                painter = painterResource(id = if (isSelected) screen.selectedIcon else screen.icon),
                 contentDescription = screen.name,
                 modifier = Modifier
                     .size(if (isSelected) VALUE_24.dp else VALUE_20.dp),

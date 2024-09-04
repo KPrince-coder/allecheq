@@ -6,10 +6,6 @@ import androidx.camera.core.ImageCapture.OnImageCapturedCallback
 import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.ImageProxy
 import androidx.camera.view.LifecycleCameraController
-import androidx.compose.material3.AlertDialog
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.core.content.ContextCompat
 import dev.android.allecheq.model.repository.CameraRepository
 
@@ -31,6 +27,5 @@ class CameraRepositoryImpl(
                 }
             }
         )
-        TODO("Not yet implemented")
     }
 }

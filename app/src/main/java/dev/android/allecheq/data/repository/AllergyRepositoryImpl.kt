@@ -1,22 +1,21 @@
+
+
 package dev.android.allecheq.data.repository
 
 import dev.android.allecheq.data.Allergy
 import dev.android.allecheq.data.datastore.AllergyDataStore
-import dev.android.allecheq.model.repository.AllergyRepository
 
-class AllergyRepositoryImpl(
-    private val allergyDataStore: AllergyDataStore
-) : AllergyRepository {
-    override suspend fun getSelectedAllergies(): List<Allergy> {
-        return allergyDataStore.getSelectedAllergies()
+class AllergyRepositoryImpl(private val dataStore: AllergyDataStore) {
+
+    suspend fun getSelectedAllergies(): List<Allergy> {
+        return dataStore.getSelectedAllergies()
     }
 
-    override suspend fun getUnselectedAllergies(): List<Allergy> {
-        return allergyDataStore.getUnselectedAllergies()
+    suspend fun saveSelectedAllergy(selectedAllergiesIds: List<Int>) {
+        dataStore.saveSelectedAllergy(selectedAllergiesIds)
     }
 
-    override suspend fun saveAllergies(selectedAllergiesIds: List<Int>) {
-        allergyDataStore.saveSelectedAllergy(selectedAllergiesIds)
-        TODO("come home")
-    }
+//    suspend fun toggleAllergySelection(allergyId: Int) {
+//        dataStore.toggleAllergySelection(allergyId)
+//    }
 }
